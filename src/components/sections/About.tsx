@@ -13,7 +13,7 @@ const skillGroups = [
   },
   {
     title: "Technologies",
-    skills: ["C", "C++", "Python", "Web Development"]
+    skills: ["C", "C++", "Python", "Web Development", "Docker", "Git"]
   },
   {
     title: "Focus Areas",
