@@ -51,9 +51,9 @@ export default function About() {
           {skillGroups.map((group, i) => (
             <div key={i} className="about-reveal text-center md:text-left">
               <h3 className="text-xs tracking-[0.2em] uppercase text-white/30 mb-4 font-bold">{group.title}</h3>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                 {group.skills.map(skill => (
-                  <span key={skill} className="px-4 py-2 bg-white/[0.03] border border-white/10 rounded-full text-white/70 text-xs font-mono lowercase">
+                  <span key={skill} className="px-5 py-2.5 bg-white/[0.03] border border-white/10 rounded-full text-white/70 text-xs font-mono lowercase interactable hover:bg-blue-500/10 hover:text-white hover:border-blue-400/50 transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] cursor-none">
                     {skill}
                   </span>
                 ))}

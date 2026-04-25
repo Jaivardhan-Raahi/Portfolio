@@ -85,8 +85,12 @@ export default function Timeline() {
         <p className="text-white/30 text-xs tracking-[0.4em] uppercase font-light">The journey continues.</p>
         
         <div className="mt-12 flex justify-center gap-8">
-          <a href="https://github.com/jaivardhan-raahi" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest text-white/50 hover:text-white transition-colors uppercase font-bold interactable">GitHub</a>
-          <a href="https://linkedin.com/in/jaivardhan-raahi" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest text-white/50 hover:text-white transition-colors uppercase font-bold interactable">LinkedIn</a>
+          <a href="https://github.com/Jaivardhan-Raahi" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-14 h-14 bg-white/[0.03] border border-white/10 rounded-full text-white/60 hover:text-white hover:bg-blue-500/10 hover:border-blue-400/50 transition-all interactable hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+            <FaGithub size={24} />
+          </a>
+          <a href="https://linkedin.com/in/jaivardhan-raahi" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-14 h-14 bg-white/[0.03] border border-white/10 rounded-full text-white/60 hover:text-white hover:bg-blue-500/10 hover:border-blue-400/50 transition-all interactable hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+            <FaLinkedin size={24} />
+          </a>
         </div>
         
         <footer className="mt-32 text-[10px] tracking-widest text-white/10 uppercase">

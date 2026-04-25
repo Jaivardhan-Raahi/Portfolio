@@ -120,16 +120,21 @@ function Core() {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
+    const isMobile = window.innerWidth < 768;
     
     if (coreRef.current) {
       const pulse = 1 + Math.sin(t * 1.5) * 0.04;
-      coreRef.current.scale.set(pulse, pulse, pulse);
+      // Also slightly reduce scale on mobile so it's less overwhelming
+      const scaleMultiplier = isMobile ? 0.7 : 1;
+      coreRef.current.scale.set(pulse * scaleMultiplier, pulse * scaleMultiplier, pulse * scaleMultiplier);
       coreRef.current.rotation.y = t * 0.08;
     }
 
     if (meshRef.current) {
-      // Reverting to the "perfect" brightness and emissive levels
-      (meshRef.current.material as THREE.MeshStandardMaterial).emissiveIntensity = 1 + Math.sin(t * 3) * 0.5;
+      // Reverting to the "perfect" brightness and emissive levels, but heavily dimmed on mobile
+      const baseIntensity = isMobile ? 0.4 : 1;
+      const pulseIntensity = isMobile ? 0.2 : 0.5;
+      (meshRef.current.material as THREE.MeshStandardMaterial).emissiveIntensity = baseIntensity + Math.sin(t * 3) * pulseIntensity;
     }
 
     const targetX = mouse.current.x * 1.2;
@@ -163,7 +168,8 @@ function Core() {
         />
       </mesh>
       
-      <pointLight intensity={4} color="#00f2ff" distance={12} />
+      {/* Light intensity responsive using pointLight but since we can't easily reactively update args without useState, we'll keep distance conservative */}
+      <pointLight intensity={3} color="#00f2ff" distance={12} />
     </group>
   );
 }

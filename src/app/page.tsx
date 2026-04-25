@@ -20,7 +20,7 @@ export default function Home() {
         <Hero />
         
         {/* Content with subtle background fade */}
-        <div className="relative z-20 bg-gradient-to-b from-transparent via-[#010103]/80 to-[#010103] pt-32">
+        <div className="relative z-20 bg-gradient-to-b from-[#010103]/80 via-[#010103]/95 to-[#010103] md:from-transparent md:via-[#010103]/80 md:to-[#010103] pt-32">
           <About />
           <Projects />
           <Timeline />
@@ -29,12 +29,12 @@ export default function Home() {
       </div>
 
       {/* Navigation overlay */}
-      <nav className="fixed top-8 right-12 z-50 hidden md:flex gap-10 mix-blend-difference interactable">
+      <nav className="fixed top-8 right-12 z-50 hidden md:flex gap-10 mix-blend-difference interactable bg-white/5 px-8 py-4 rounded-full border border-white/10 backdrop-blur-md">
         {['About', 'Projects', 'Timeline'].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
-            className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors"
+            className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60 hover:text-blue-400 transition-all hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]"
           >
             {item}
           </a>
